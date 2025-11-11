@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+{% block content %}
+<h1>Pedido #{{ pedido.id }}</h1>
+<p>Status: {{ pedido.status }}</p>
+<p>Endereço: {{ pedido.endereco }}</p>
+<p>Total: R$ {{ pedido.total }}</p>
+<h2>Itens:</h2>
+<ul>
+{% for item in pedido.itens %}
+    <li>{{ item.quantidade }}x {{ item.cupcake.nome }} (R$ {{ item.preco_unitario }})</li>
+{% endfor %}
+</ul>
+<a href="{{ url_for('main.vitrine') }}">Voltar à Vitrine</a>
+{% endblock %}

@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+{% block content %}
+<h1>Cupcakes Gourmet</h1>
+<div class="vitrine">
+  {% for cupcake in cupcakes %}
+  <div class="produto">
+      <img src="{{ cupcake.imagem }}" alt="{{ cupcake.nome }}">
+      <h2>{{ cupcake.nome }}</h2>
+      <p>{{ cupcake.descricao }}</p>
+      <span>R$ {{ cupcake.preco }}</span>
+      <a href="{{ url_for('main.add_carrinho', id=cupcake.id) }}">Adicionar ao carrinho</a>
+  </div>
+  {% endfor %}
+</div>
+{% endblock %}

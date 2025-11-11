@@ -1,0 +1,9 @@
+{% extends "base.html" %}
+{% block content %}
+<h1>Finalizar Pedido</h1>
+<form method="post">
+  <label for="endereco">Endereço de Entrega:</label><br>
+  <input type="text" id="endereco" name="endereco" required placeholder="Digite seu endereço completo"><br><br>
+  <button type="submit">Confirmar Pedido</button>
+</form>
+{% endblock %}
